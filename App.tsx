@@ -8,18 +8,14 @@ import Step5Survey from './components/Step5Survey';
 import Step6Success from './components/Step6Success';
 import ProgressBar from './components/ProgressBar';
 
-// Header do formulário (aparece da etapa 1 em diante)
+// Header atualizado com a Logo Colorida
 const Header: React.FC = () => (
-  <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-6 py-4">
-    <div className="flex items-center gap-4 text-text-light dark:text-text-dark">
-      <div className="size-8 text-primary">
-        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 8.47L4.42 7.07 12 4.49 19.58 7.07 12 11.47z"/>
-            <path d="M21.94 17.51L17 19.99v3.02l5-2.5v-2.98zM15 19.99l-5 2.51v-3.02l5-2.5v3.01z"/>
-        </svg>
-      </div>
-      <h2 className="text-lg font-bold tracking-tight">Cursinho Comunitário Bonsucesso</h2>
-    </div>
+  <header className="flex items-center justify-center sm:justify-start border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-6 py-3 bg-white dark:bg-gray-800">
+    <img 
+        src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/logocolorida.png" 
+        alt="Cursinho Comunitário Bonsucesso" 
+        className="h-10 sm:h-12 w-auto object-contain" // Ajuste de altura responsivo
+    />
   </header>
 );
 
@@ -69,14 +65,14 @@ const App: React.FC = () => {
                 {/* 1. Imagens de Fundo (Mobile e Desktop) */}
                 <div className="absolute inset-0 z-0">
                     
-                    {/* IMAGEM MOBILE (Aparece em telas pequenas, some em telas médias 'md:hidden') */}
+                    {/* IMAGEM MOBILE */}
                     <img 
                         src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/mobile.png" 
                         alt="Background Cursinho Mobile" 
                         className="w-full h-full object-cover opacity-100 md:hidden" 
                     />
 
-                    {/* IMAGEM DESKTOP (Escondida em telas pequenas 'hidden', aparece em médias 'md:block') */}
+                    {/* IMAGEM DESKTOP */}
                     <img 
                         src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/Gemini_Generated_Image_txd98ltxd98ltxd9%20(1).png" 
                         alt="Background Cursinho Desktop" 
