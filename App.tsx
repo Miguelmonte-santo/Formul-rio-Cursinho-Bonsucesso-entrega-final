@@ -66,64 +66,75 @@ const App: React.FC = () => {
     if (step === 0) {
         return (
             <div className="relative min-h-screen w-full overflow-hidden bg-gray-900">
-                {/* 1. Imagem de Fundo (Capa) */}
+                {/* 1. Imagens de Fundo (Mobile e Desktop) */}
                 <div className="absolute inset-0 z-0">
+                    
+                    {/* IMAGEM MOBILE (Aparece em telas pequenas, some em telas médias 'md:hidden') */}
                     <img 
-                        src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/estampainscricao.png" 
-                        alt="Background Cursinho" 
-                        // AJUSTE: Opacidade 100% para a imagem ficar clara e nítida
-                        className="w-full h-full object-cover opacity-100" 
+                        src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/mobile.png" 
+                        alt="Background Cursinho Mobile" 
+                        className="w-full h-full object-cover opacity-100 md:hidden" 
                     />
-                    {/* Overlay: AJUSTE: Gradiente muito mais suave (termina em 60% opacidade) para clarear a tela */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-gray-900/0 via-gray-900/30 to-gray-900/60"></div>
+
+                    {/* IMAGEM DESKTOP (Escondida em telas pequenas 'hidden', aparece em médias 'md:block') */}
+                    <img 
+                        src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/Gemini_Generated_Image_txd98ltxd98ltxd9%20(1).png" 
+                        alt="Background Cursinho Desktop" 
+                        className="w-full h-full object-cover opacity-100 hidden md:block" 
+                    />
+                    
                 </div>
 
                 {/* 2. Conteúdo da Capa */}
-                {/* AJUSTE: 'lg:pr-12' move o conteúdo mais para a direita (perto da borda) */}
                 <div className="relative z-10 min-h-screen w-full flex items-center justify-end px-6 md:pr-12 lg:pr-16">
                     
-                    {/* AJUSTE: 'max-w-md' torna o bloco de conteúdo mais estreito (menor) */}
                     <div className="w-full max-w-md text-white animate-fade-in-up">
                         
-                        {/* AJUSTE: 'text-justify' para alinhar o texto perfeitamente */}
-                        <p className="text-base md:text-lg text-gray-100 mb-8 leading-relaxed font-medium drop-shadow-md text-justify">
-                            Já estão abertas as inscrições para o Cursinho Comunitário Bonsucesso para o 1º semestre de 2026.
-                        </p>
+                        {/* CARD ÚNICO */}
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 md:p-8 text-left">
+                            
+                            {/* Texto de Boas Vindas */}
+                            <p className="text-base md:text-lg text-white mb-6 leading-relaxed font-medium text-justify">
+                                Já estão abertas as inscrições para o Cursinho Comunitário Bonsucesso para o 1º semestre de 2026.
+                            </p>
 
-                        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 mb-8 text-left shadow-xl">
-                            <h3 className="font-bold text-lg mb-4 text-blue-200 border-b border-white/10 pb-2">
+                            {/* Título do Checklist */}
+                            <h3 className="font-bold text-lg mb-4 text-white border-b border-white/10 pb-2">
                                 Antes de começar, tenha em mãos:
                             </h3>
-                            <ul className="space-y-3 text-sm">
+                            
+                            {/* Lista */}
+                            <ul className="space-y-3 text-sm mb-8">
                                 <li className="flex items-center gap-3">
-                                    <span className="material-symbols-outlined text-blue-400 shrink-0">person</span>
-                                    <span>Dados pessoais (Nome, E-mail, Nascimento).</span>
+                                    <span className="material-symbols-outlined text-white shrink-0">person</span>
+                                    <span className="text-white">Dados pessoais (Nome, E-mail, Nascimento).</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="material-symbols-outlined text-blue-400 shrink-0">badge</span>
-                                    <span>Documentos (RG e CPF).</span>
+                                    <span className="material-symbols-outlined text-white shrink-0">badge</span>
+                                    <span className="text-white">Documentos (RG e CPF).</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="material-symbols-outlined text-blue-400 shrink-0">home</span>
-                                    <span>Endereço completo com CEP.</span>
+                                    <span className="material-symbols-outlined text-white shrink-0">home</span>
+                                    <span className="text-white">Endereço completo com CEP.</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="material-symbols-outlined text-blue-400 shrink-0">school</span>
-                                    <span>Dados da escola de Ensino Médio.</span>
+                                    <span className="material-symbols-outlined text-white shrink-0">school</span>
+                                    <span className="text-white">Dados da escola de Ensino Médio.</span>
                                 </li>
                             </ul>
+
+                            {/* Botão */}
+                            <div className="flex justify-start">
+                                <button
+                                    onClick={nextStep}
+                                    className="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-primary rounded-full hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-gray-900 w-full sm:w-auto"
+                                >
+                                    Iniciar Inscrição
+                                    <span className="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                </button>
+                            </div>
                         </div>
 
-                        {/* Botão alinhado à esquerda dentro do bloco (que já está à direita) */}
-                        <div className="flex justify-start">
-                            <button
-                                onClick={nextStep}
-                                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-primary rounded-full hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-gray-900 shadow-lg shadow-primary/30 hover:shadow-primary/50 transform hover:-translate-y-1 w-full sm:w-auto"
-                            >
-                                Iniciar Inscrição
-                                <span className="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
