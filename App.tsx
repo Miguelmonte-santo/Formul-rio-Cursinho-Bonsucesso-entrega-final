@@ -74,7 +74,7 @@ const App: React.FC = () => {
 
                     {/* IMAGEM DESKTOP */}
                     <img 
-                        src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/Gemini_Generated_Image_txd98ltxd98ltxd9%20(1).png" 
+                        src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/logoinscr.png" 
                         alt="Background Cursinho Desktop" 
                         className="w-full h-full object-cover opacity-100 hidden md:block" 
                     />
