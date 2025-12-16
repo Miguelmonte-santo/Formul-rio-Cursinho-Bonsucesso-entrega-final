@@ -72,11 +72,11 @@ const App: React.FC = () => {
                         className="w-full h-full object-cover opacity-100 md:hidden" 
                     />
 
-                    {/* IMAGEM DESKTOP */}
+                    {/* IMAGEM DESKTOP - ALTERADA PARA OBJECT-FILL */}
                     <img 
-                        src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/logoinscr.png" 
+                        src="https://fnfybutkvsozbvvacomo.supabase.co/storage/v1/object/public/imagens%20para%20plataforma/logoinscricao.png" 
                         alt="Background Cursinho Desktop" 
-                        className="w-full h-full object-cover opacity-100 hidden md:block" 
+                        className="w-full h-full object-fill opacity-100 hidden md:block" 
                     />
                     
                 </div>
